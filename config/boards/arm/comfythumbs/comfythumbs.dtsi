@@ -1,0 +1,97 @@
+/*
+*
+* Copyright (c) 2021 Malakai King
+* SPDX-License-Identifier: MIT
+*
+*/
+
+/dts-v1/;
+#include <nordic/nrf52840_qiaa.dtsi>
+
+#include <dt-bindings/zmk/matrix-transform.h>
+
+/ {
+	model = "comfythumbs";
+	compatible = "comfythumbs";
+
+	chosen {
+		zephyr,code-partition = &code_partition;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+	};
+
+	sensors {
+		compatible = "zmk,keymap-sensors";
+		sensors = <&left_encoder>;
+	};
+
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		columns = <24>;
+		rows = <9>;
+
+					map = <
+								RC(0,5)	RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12) RC(0,13) RC(0,14) RC(0,15) RC(0,16) RC(0,17) RC(0,18)
+								RC(1,5)	RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)		   RC(1,13) RC(1,14) RC(1,15) RC(1,16) RC(1,17) RC(1,18)
+								RC(2,5)	RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11) RC(2,12) RC(2,13) RC(2,14) RC(2,15) RC(2,16) RC(2,17) RC(2,18)
+								RC(3,5)	RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11) RC(3,12) RC(3,13) RC(3,14) RC(3,15) RC(3,16) RC(3,17) RC(3,18)
+								RC(4,5)	RC(4,6) RC(4,7) RC(4,8) RC(4,9) RC(4,10)                   RC(4,13) RC(4,14) RC(4,15) RC(4,16) RC(4,17) RC(4,18)
+						RC(7,0)						RC(5,9) RC(5,10) RC(5,11) RC(5,12) RC(5,13) RC(5,14)							 RC(7,22)
+					RC(7,1) RC(8,0) RC(8,1)					RC(6,2)  RC(6,3) RC(6,4)  RC(6,19) RC(6,20) RC(6,21)	      					RC(7,23) RC(8,22) RC(8,23)
+		>;
+	};
+};
+
+
+&adc {
+	status = "okay";
+};
+
+&gpiote {
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&usbd {
+	status = "okay";
+};
+
+&flash0 {
+	/*
+	 * For more information, see:
+	 * http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
+	 */
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		sd_partition: partition@0 {
+			label = "mbr";
+			reg = <0x00000000 0x00001000>;
+		};
+		code_partition: partition@1000 {
+			label = "code_partition";
+			reg = <0x00001000 0x000d3000>;
+		};
+
+		storage_partition: partition@d4000 {
+			label = "storage";
+			reg = <0x000d4000 0x00020000>;
+		};
+
+		boot_partition: partition@f4000 {
+			label = "adafruit_boot";
+			reg = <0x000f4000 0x0000c000>;
+		};
+	};
+};

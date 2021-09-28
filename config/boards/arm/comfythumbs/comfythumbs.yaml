@@ -1,0 +1,15 @@
+identifier: comfythumbs
+name: ComfyThumbs
+type: keyboard
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - adc
+  - ble
+  - usb_device
+  - ieee802154
+  - pwm
+  - watchdog

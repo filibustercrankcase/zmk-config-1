@@ -1,0 +1,51 @@
+#
+# Copyright (c) 2021 Malakai King
+# SPDX-License-Identifier: MIT
+#
+
+if BOARD_COMFYTHUMBS-LEFT
+
+	config ZMK_KEYBOARD_NAME
+	default "ComfyThumbs"
+
+endif # BOARD_COMFYTHUMBS-LEFT
+
+if BOARD_COMFYTHUMBS-RIGHT
+
+	config ZMK_KEYBOARD_NAME
+	default "ComfyThumbs rt"
+
+endif # BOARD_COMFYTHUMBS-RIGHT
+
+
+if BOARD_COMFYTHUMBS-LEFT || BOARD_COMFYTHUMBS-RIGHT
+
+config BOARD
+	default "comfythumbs"
+
+config ZMK_SPLIT
+	default y
+
+config BT_CTLR
+	default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+config ZMK_BATTERY_VOLTAGE_DIVIDER
+	default y
+
+if USB
+
+config USB_NRFX
+	default y
+
+config USB_DEVICE_STACK
+	default y
+
+endif # USB
+
+endif # BOARD_COMFYTHUMBS-LEFT || BOARD_COMFYTHUMBS-RIGHT
