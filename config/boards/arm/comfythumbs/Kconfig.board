@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: MIT
 #
 
-config BOARD_COMFYTHMBS-LEFT
-	bool "comfythumbs-left"
+config BOARD_COMFYTHMBS_LEFT
+	bool "comfythumbs_left"
 	depends on SOC_NRF52840_QIAA
 
-config BOARD_COMFYTHUMBS-RIGHT
-	bool "comfythumbs-right"
+config BOARD_COMFYTHUMBS_RIGHT
+	bool "comfythumbs_right"
 	depends on SOC_NRF52840_QIAA

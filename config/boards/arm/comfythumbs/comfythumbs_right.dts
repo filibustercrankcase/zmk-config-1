@@ -5,7 +5,7 @@
 *
 */
 
-#include "comfythumbs'.dtsi"
+#include "comfythumbs.dtsi"
 
 /{
 	kscan0: kscan {
