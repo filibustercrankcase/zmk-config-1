@@ -38,22 +38,22 @@ jobs:
       - name: List modules (west list)
         run: west list
       - name: Build ComfyThumbs Left (west build)
-        run: west build --pristine -s zmk/app -b comfythumbs-left -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b comfythumbs_left -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: ComfyThumbs Left DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/comfythumbs-left.dts.pre.tmp
+        run: cat -n build/zephyr/comfythumbs_left.dts.pre.tmp
       - name: ComfyThumbs Left .config
         if: ${{ always() }}
         run: cat -n build/zephyr/.config
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 comfythumbs-left.uf2
+        run: cp build/zephyr/zmk.uf2 comfythumbs_left.uf2
       - name: Archive (ComfyThumbs Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
           path: comfythumbs-left.uf2
       - name: Build ComfyThumbs Right (west build)
-        run: west build --pristine -s zmk/app -b comfythumbs-right -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b comfythumbs_right -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: ComfyThumbs Right DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/comfythumbs-right.dts.pre.tmp
@@ -61,9 +61,9 @@ jobs:
         if: ${{ always() }}
         run: cat -n build/zephyr/.config
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 comfythumbs-right.uf2
+        run: cp build/zephyr/zmk.uf2 comfythumbs_right.uf2
       - name: Archive (ComfyThumbs Right)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: comfythumbs-right.uf2
+          path: comfythumbs_right.uf2
