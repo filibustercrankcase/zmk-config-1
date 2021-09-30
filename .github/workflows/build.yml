@@ -49,12 +49,12 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: comfythumbs-left.uf2
+          path: comfythumbs_left.uf2
       - name: Build ComfyThumbs Right (west build)
         run: west build --pristine -s zmk/app -b comfythumbs_right -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: ComfyThumbs Right DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/comfythumbs-right.dts.pre.tmp
+        run: cat -n build/zephyr/comfythumbs_right.dts.pre.tmp
       - name: ComfyThumbs Right .config
         if: ${{ always() }}
         run: cat -n build/zephyr/.config
