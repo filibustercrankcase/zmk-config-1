@@ -54,7 +54,7 @@ jobs:
         run: west build --pristine -s zmk/app -b comfythumbs_right -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: ComfyThumbs Right DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/comfythumbs-right.dts.pre.tmp
+        run: cat -n build/zephyr/comfythumbs_right.dts.pre.tmp
       - name: ComfyThumbs Right .config
         if: ${{ always() }}
         run: cat -n build/zephyr/.config
