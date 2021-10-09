@@ -6,8 +6,3 @@
 */
 
 #include "comfythumbs.keymap"
-/ {
-        keymap {
-		sensor-bindings = <&inc_dec_kp A B>;
-        };
-};
