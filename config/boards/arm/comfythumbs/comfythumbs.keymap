@@ -28,7 +28,7 @@
              &kp PG_UP         &kp LSHFT   &kp BSPC  &kp TAB   &kp RET &kp SPC    &kp RSHFT              &kp UP
    &kp HOME  &kp PG_DN &kp END &lt 1 LGUI &kp LCTRL &kp LALT  &kp RALT &kp RCTRL &lt 1 RGUI   &kp LEFT &kp DOWN &kp RIGHT
                         >;
-            		sensor-bindings = <&inc_dec_kp A B>;
+            		sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
                 lower_layer {
                         label = "FN";
