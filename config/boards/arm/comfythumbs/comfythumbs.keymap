@@ -26,9 +26,9 @@
    &kp GRAVE &kp A  &kp S  &kp D  &kp F    &kp G  &kp CAPS      &kp BSLH &kp H   &kp J  &kp K    &kp L   &kp SCLN &kp SQT
    &kp LBKT  &kp Z  &kp X  &kp C  &kp V    &kp B                         &kp N   &kp M  &kp CMMA &kp DOT &kp FSLH &kp RBKT
              &kp PG_UP         &kp LSHFT   &kp BSPC  &kp TAB   &kp RET &kp SPC    &kp RSHFT              &kp UP
-   &kp HOME  &kp PG_DN &kp END &lt 1 LGUI &kp LCTRL &kp LALT  &kp RALT &kp RCTRL &lt 1 RGUI   &kp LEFT &kp DOWN &kp RIGHT 
-                                  
+   &kp HOME  &kp PG_DN &kp END &lt 1 LGUI &kp LCTRL &kp LALT  &kp RALT &kp RCTRL &lt 1 RGUI   &kp LEFT &kp DOWN &kp RIGHT
                         >;
+            		sensor-bindings = <&inc_dec_kp A B>;
                 };
                 lower_layer {
                         label = "FN";
