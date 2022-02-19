@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define default_layer 0
-#define nav_layer   1
+#define num_layer   1
 #define sym_layer   2
 
 / {
@@ -29,7 +29,7 @@
           &kp LGUI &mo 1 &kp LSFT   &kp SPC &mo 2 &kp RALT
                         >;
                 };
-                nav_layer {
+                num_layer {
 // -----------------------------------------------------------------------------------------
 // |BTCLR|     | ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
 // | BT1 | GUI | ALT | CTRL | NUM |   |  /  | LEFT | DOWN | RGT | BKSP |
