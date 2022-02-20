@@ -36,8 +36,8 @@
 // | BT2 |     |     |      |     |   |  \  | ENT  |      |     |      |
 //             |     |      |     |   |     |      |      |
                         bindings = <
-   &bt BT_CLR   &trans  &kp ESC  &kp TILD &trans     &kp TAB  &kp HOME &kp UARW &kp END  &kp DEL
-   &bt BT_SEL 0 &kp GUI &kp RALT &kp LCTL &mo 3      &kp FSLH &kp LARW &kp DARW &kp RARW &kp BKSP
+   &bt BT_CLR   &trans  &kp ESC  &kp TILD &trans     &kp TAB  &kp HOME &kp UARW &kp END  &kp BKSP
+   &bt BT_SEL 0 &kp GUI &kp RALT &kp LCTL &mo 3      &kp FSLH &kp LARW &kp DARW &kp RARW &kp DEL
    &bt BT_SEL 1 &trans  &trans   &trans   &trans     &kp BSLH &kp RET  &trans   &trans    &trans
                         &trans   &trans   &trans     &trans   &trans   &trans
                         >;
@@ -53,7 +53,7 @@
    &kp BANG  &kp ATSN  &kp HASH  &kp CURU  &kp PRCT    &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
    &trans    &trans    &trans    &trans    &trans      &kp MINUS &kp EQL  &kp LBKT &kp RBKT &kp PIPE
    &trans    &trans    &trans    &trans    &trans      &trans    &trans   &trans   &trans   &kp BSLH
-                       &kp LGUI  &trans    &kp SPC     &kp RET   &trans   &kp RALT
+                       &kp LGUI  &trans    &kp RET     &kp SPC   &trans   &kp RALT
                         >;
                 };
               };
